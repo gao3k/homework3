@@ -1,0 +1,38 @@
+def initials (full_name):
+    name = full_name.split()
+
+    first_initial=(name[0][0]).upper()
+    second_initial=(name[1][0]).upper()
+    print((first_initial) + '.' + (second_initial))
+initials('saba shubashishvili')
+
+def my_func(array):
+    print(array)/len(array)
+my_func([1,2,3,4,5])
+
+def palcheck (word):
+    if (word[::-1]).lower() == word. lower():
+        print(True)
+    else:
+        print(False)
+palcheck('racecar')
+
+def remove_spaces (string):
+    output_string = string.replace(' ','')
+    print(output_string)
+remove_spaces('Goal Oriented Academy')
+
+def sum_numbers(numbers):
+    positive_sum = 0
+    negative_count = 0
+    
+    for num in numbers:
+        if num > 0:
+            positive_sum += num
+        elif num < 0:
+            negative_count += 1
+            
+    print('Sum of positive numbers:', positive_sum)
+    print('Number of negative numbers:', negative_count)
+
+sum_numbers([1, -2, -6, -7, 7, 8, 9, 10, -1])
