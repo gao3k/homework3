@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    position: fixed;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+}
+
+.par{
+    display: flex;
+    margin-right: 500px;
+}
+
+.btn{
+    display: flex;
+    margin-left: 500px;
+    background-color: gray;
+    border: 1px solid white;
+    color: white;
+    border-radius: 10px;
+}
+
+.btn:hover{
+    background-color: white;
+    border: 1px solid gray;
+    color: gray;
+    transition: 0.25s;
+}

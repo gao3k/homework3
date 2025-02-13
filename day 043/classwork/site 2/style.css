@@ -1,0 +1,19 @@
+
+.parent{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.child{
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    padding-top: 230px;
+    background-color: rgb(221, 210, 210);
+    width: 500px;
+    height: 657px;
+}

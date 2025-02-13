@@ -1,0 +1,36 @@
+container{
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.c1{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+ 
+.c2{
+    background-color: green;
+    width: 100px;
+    height: 100px;
+}
+
+.c3{
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+}
+
+.c4{
+    background-color: yellow;
+    width: 100px;
+    height: 100px;
+}
+
+.c5{
+    background-color: purple;
+    width: 100px;
+    height: 100px;
+}

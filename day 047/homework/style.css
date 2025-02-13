@@ -1,0 +1,52 @@
+body{
+    background-color: gray;
+}
+
+
+.maindiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 358px;
+    height: 600px;
+    margin-left: 530px;
+    border: 1px solid;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.text{
+    background-color: rgb(255, 255, 255);
+    width: 358px;
+    height: 600px;
+    text-align: center;
+}
+
+.pay{
+    width: 300px;
+    height: 80px;
+    margin-left: 29px;
+    background-color: rgb(240, 240, 240);
+    border: 1px solid rgb(230, 230, 230) ;
+    border-radius: 30px;
+}
+
+.bbtn {
+    width: 300px;
+    height: 30px;
+    margin-left: 29px;
+    background-color: blue;
+    text-align: center;
+    color: wheat;
+    border: 1px solid blue;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.par {
+    margin: auto;
+    text-align: center;
+}

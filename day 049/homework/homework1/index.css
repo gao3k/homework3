@@ -1,0 +1,38 @@
+.middiv{
+    display: grid;
+    grid-template-columns: 700px 600px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#navbar a {
+    margin: 0 10px; 
+}
+
+#par{
+    margin-right: 20px;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+#h1{
+    font-size: 70px;
+    font-weight: bold;
+    margin-left: 100px;
+}
+
+#btn{
+    padding: 20px;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 170px;
+}

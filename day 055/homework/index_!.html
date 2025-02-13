@@ -1,0 +1,66 @@
+<!--<!DOCTYPE html>: განასხვავებს HTML5 დოკუმენტს.
+<head>: შეიცავს მეტატეგებს და სთილებს.
+<body>: საიტის მთავარი შინაარსი, რომელიც მოიცავს პარაგრაფს და ღილაკებს.
+CSS:
+
+body: ძირითადი სტილები ტექსტისა და მარგინების განსასაზღვრად.
+button: ღილაკების სტილიზაცია.
+#counter: პარაგრაფის სტილიზაცია, რომელიც აჩვენებს მნიშვნელობას.
+JavaScript:
+
+counter: მიაწვდოს და გაწვდოს მონაცემების მნიშვნელობა.
+updateCounter(): განახლდება პარაგრაფის შინაარსი მიმდინარე მნიშვნელობით.
+changeCounter(value): ზრდის ან მცირდება counter მნიშვნელობით, ღილაკების მიხედვით.
+resetCounter(): ძველინარით, მიაწვდოს 0 მნიშვნელობა-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            font-size: 20px;
+            margin: 10px;
+            padding: 10px 20px;
+        }
+        #counter {
+            font-size: 40px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter Application</h1>
+    <div id="counter">0</div>
+    <button onclick="changeCounter(1)">+1</button>
+    <button onclick="resetCounter()">Reset</button>
+    <button onclick="changeCounter(-1)">-1</button>
+
+    <script>
+        let counter = 0;
+        const counterElement = document.getElementById('counter');
+
+        function updateCounter() {
+            counterElement.textContent = counter;
+        }
+
+        function changeCounter(value) {
+            counter += value;
+            updateCounter();
+        }
+
+        function resetCounter() {
+            counter = 0;
+            updateCounter();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+.paragraph {
+    width: 300px; /* პარაგრაფის სიგანე */
+    height: 30px; /* პარაგრაფის სიმაღლე */
+    border: 5px solid red; /* border სისქელი და ფერი */
+    padding: 20px 10px 30px 40px; /* დაშორება ზედა, მარცხენა, ქვედა, მარჯვენა */
+}
