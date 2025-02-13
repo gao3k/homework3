@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation Example</title>
+</head>
+<body>
+    <!-- First Example: Bubbling -->
+    <div id="bubble-container">
+        <button id="bubble-btn">Click Me (Bubbling)</button>
+    </div>
+    
+    <!-- Second Example: Capturing -->
+    <div id="capture-container">
+        <button id="capture-btn">Click Me (Capturing)</button>
+    </div>
+
+    <script>
+        /**
+         * Event Propagation - არის მოვლენის გავრცელების პროცესი DOM-ის ელემენტებში.
+         * იგი შეიძლება მოხდეს ორი გზით: Bubbling (ქვემოდან ზემოთ) და Capturing (ზემოდან ქვემოთ).
+         * 
+         * Bubbling: მოვლენა ჯერ ბავშვის ელემენტზე ხდება და შემდეგ მშობელზე ვრცელდება.
+         * Capturing: მოვლენა ჯერ მშობელზე ხდება და შემდეგ ბავშვის ელემენტზე გადადის.
+         */
+
+        // Bubbling Example
+        document.getElementById("bubble-container").addEventListener("click", function() {
+            alert("Bubbling: Div clicked!");
+        });
+
+        document.getElementById("bubble-btn").addEventListener("click", function() {
+            alert("Bubbling: Button clicked!");
+        });
+
+        // Capturing Example
+        document.getElementById("capture-container").addEventListener("click", function() {
+            alert("Capturing: Div clicked!");
+        }, true); // third parameter true ნიშნავს capturing რეჟიმს
+
+        document.getElementById("capture-btn").addEventListener("click", function() {
+            alert("Capturing: Button clicked!");
+        }, true);
+    </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!--1)
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Text Example</title>
+</head>
+<body>
+    <p id="myParagraph">Original Text</p>
+    <script>
+        function changeText() {
+            var paragraph = document.getElementById("myParagraph");
+            paragraph.innerText = "New Text";
+        }
+        changeText();
+    </script>
+</body>
+</html>
+
+2)
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    <style>
+        .colorDiv {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="colorDiv" style="background-color: red;"></div>
+    <div class="colorDiv" style="background-color: green;"></div>
+    <div class="colorDiv" style="background-color: blue;"></div>
+    <script>
+        function changeBackgroundColor() {
+            var elements = document.getElementsByClassName("colorDiv");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.backgroundColor = "yellow";
+            }
+        }
+        changeBackgroundColor();
+    </script>
+</body>
+</html>
+
+
+3)
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count li Elements</title>
+</head>
+<body>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <script>
+        function countLiElements() {
+            var liElements = document.getElementsByTagName("li");
+            console.log("Number of li elements:", liElements.length);
+        }
+        countLiElements();
+    </script>
+</body>
+</html>
+
+
+4)
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Style by ID</title>
+</head>
+<body>
+    <h1 id="myHeading">Original Heading</h1>
+    <script>
+        function changeStyle() {
+            var heading = document.getElementById("myHeading");
+            heading.style.fontSize = "30px";
+            heading.style.color = "red";
+        }
+        changeStyle();
+    </script>
+</body>
+</html>
+
+
+9)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlight Odd Rows</title>
+    <style>
+        .odd {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr><td>Row 1</td></tr>
+        <tr><td>Row 2</td></tr>
+        <tr><td>Row 3</td></tr>
+        <tr><td>Row 4</td></tr>
+        <tr><td>Row 5</td></tr>
+    </table>
+
+    <script>
+        function highlightOddRows() {
+            const rows = document.getElementsByTagName('tr');
+            for (let i = 0; i < rows.length; i++) {
+                if (i % 2 === 0) { // 0-based index, so 0, 2, 4... are odd rows
+                    rows[i].classList.add('odd');
+                }
+            }
+        }
+
+        highlightOddRows();
+    </script>
+</body>
+</html>
+
+
+10)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom getElementsByTagName</title>
+</head>
+<body>
+    <div>Div 1</div>
+    <p>Paragraph 1</p>
+    <div>Div 2</div>
+    <p>Paragraph 2</p>
+
+    <script>
+        function myGetElementsByTagName(tagName) {
+            const elements = [];
+            const allElements = document.getElementsByTagName('*');
+            for (let i = 0; i < allElements.length; i++) {
+                if (allElements[i].tagName.toLowerCase() === tagName.toLowerCase()) {
+                    elements.push(allElements[i]);
+                }
+            }
+            return elements;
+        }
+
+        // Test the function by changing the text of all <div> elements
+        const divs = myGetElementsByTagName('div');
+        for (let i = 0; i < divs.length; i++) {
+            divs[i].textContent = 'Changed Div ' + (i + 1);
+        }
+    </script>
+</body>
+</html>
+

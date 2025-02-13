@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Paragraph</title>
+</head>
+<body>
+    <!-- Add Paragraph -->
+    <div id="text-container"></div>
+    <button onclick="addParagraph()">Add Paragraph</button>
+
+    <script>
+        function addParagraph() {
+            let newParagraph = document.createElement("p");
+            newParagraph.textContent = "New paragraph added.";
+            newParagraph.id = "p" + Math.random().toString(36).substr(2, 9);
+            document.getElementById("text-container").appendChild(newParagraph);
+        }
+    </script>
+</body>
+</html>

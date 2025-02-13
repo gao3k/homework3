@@ -1,0 +1,74 @@
+<!--
+2) შექმენით ფორმა სადაც გექნებათ, მინიმუმ 5 შესატანი ველი, როპდესაც ფორმა დადსატურდფება წამოიღეთ დადასტურებული ინფორმაცია და შეინახეთ ობიექტის სახით, ობიექტი შექმენით კონსტრუქტორით რომელსაც დაარქმევთ Account, როდესაც შექმნით ობიექტს დაამატეთ მასივში, შემდეგ კი ახლად დამატებული ობიექტი გამოიტანეთ ვებგვერდზე ვთქვათ, Account 1: Luka Tskhvaradze ...
+3) გამოიყენეთ for in and for of ციკლები და ახსნეით რა განსხვავებაა მათ შორის
+4) გამოუყენეთ arrow ფუნქცია და ახსენით რა განსხვავებააა ჩვეულებრივ ფუნქციასა და მას შორის კომენტარებით
+5) ახსენით კომენტარებით რატომ არის ცუდი var ის გამოყენება, რა არის ფარგლები, რა არის hoisting
+
+2)
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Form</title>
+</head>
+<body>
+
+    <form id="accountForm">
+        <label for="name">სახელი:</label>
+        <input type="text" id="name" required>
+        <br>
+        
+        <label for="surname">გვარი:</label>
+        <input type="text" id="surname" required>
+        <br>
+        
+        <label for="email">ელ. ფოსტა:</label>
+        <input type="email" id="email" required>
+        <br>
+        
+        <label for="phone">ტელეფონი:</label>
+        <input type="text" id="phone" required>
+        <br>
+        
+        <label for="age">ასაკი:</label>
+        <input type="number" id="age" required>
+        <br>
+        
+        <button type="submit">გაგზავნა</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+        const accounts = [];
+
+        function Account(name, surname, email, phone, age) {
+            this.name = name;
+            this.surname = surname;
+            this.email = email;
+            this.phone = phone;
+            this.age = age;
+        }
+
+        document.getElementById('accountForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const surname = document.getElementById('surname').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const age = document.getElementById('age').value;
+
+            const newAccount = new Account(name, surname, email, phone, age);
+            accounts.push(newAccount);
+
+            const output = document.getElementById('output');
+            output.innerHTML += `Account ${accounts.length}: ${newAccount.name} ${newAccount.surname}<br>`;
+        });
+    </script>
+
+</body>
+</html>
+
+

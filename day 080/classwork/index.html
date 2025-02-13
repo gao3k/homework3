@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>პორტფოლიო</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ჩემი პორტფოლიო</h1>
+        
+        <form id="portfolioForm" class="portfolio-form">
+            <div class="form-group">
+                <label for="fullName">სახელი და გვარი</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="profession">პროფესია</label>
+                <input type="text" id="profession" name="profession" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">ელ-ფოსტა</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">ტელეფონი</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="website">ვებსაიტი</label>
+                <input type="url" id="website" name="website">
+            </div>
+
+            <div class="form-group">
+                <label for="bio">ჩემს შესახებ</label>
+                <textarea id="bio" name="bio" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="skills">უნარები (მძიმით გამოყოფილი)</label>
+                <input type="text" id="skills" name="skills" placeholder="HTML, CSS, JavaScript">
+            </div>
+
+            <button type="submit">შენახვა</button>
+        </form>
+
+        <div id="preview" class="preview-section">
+            <h2>პრევიუ</h2>
+            <div id="previewContent" class="preview-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+#1)5kyu
+def increment_string(s):
+    # Regular expression to find the trailing number
+    match = re.search(r'\d+$', s)
+    
+    if match:
+        # If a number is found, increment it
+        number = match.group(0)
+        incremented_number = str(int(number) + 1)
+        # Preserve leading zeros
+        leading_zeros = len(number) - len(incremented_number)
+        return s[:match.start()] + '0' * leading_zeros + incremented_number
+    else:
+        # If no number is found, append '1'
+        return s + '1'
+
+# Examples
+print(increment_string("foo"))      # Output: foo1
+print(increment_string("foobar23")) # Output: foobar24
+print(increment_string("foo0042"))  # Output: foo0043
+print(increment_string("foo9"))     # Output: foo10
+print(increment_string("foo099"))   # Output: foo100
+
+
+
+#2)5kyu
+def average_squared_difference(arr1, arr2):
+    # Ensure both arrays are of equal length
+    if len(arr1) != len(arr2):
+        raise ValueError("Both arrays must be of equal length")
+    
+    # Calculate the squared absolute value differences
+    squared_diffs = [(a - b) ** 2 for a, b in zip(arr1, arr2)]
+    
+    # Calculate the average of the squared differences
+    average = sum(squared_diffs) / len(squared_diffs)
+    
+    return average
+
+# Examples
+print(average_squared_difference([1, 2, 3], [4, 5, 6]))  # Output: 9.0
+print(average_squared_difference([10, 20, 10, 2], [10, 25, 5, -2]))  # Output: 16.5
+print(average_squared_difference([-1, 0], [0, -1]))  # Output: 1.0
