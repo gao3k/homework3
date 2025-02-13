@@ -1,0 +1,124 @@
+/* პინკი კვადრატი */
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+  }
+  
+  /* ნარინჯისფერი წრე */
+  .circle {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    border-radius: 50%;
+  }
+  
+  /* მუქი მწვანე მართკუთხედი */
+  .rectangle {
+    width: 150px;
+    height: 75px;
+    background-color: darkgreen;
+  }
+  
+  /* ღია ლურჯი სამკუთხედი */
+  .triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid lightblue;
+  }
+  
+  /* ღია მწვანე პენტაგონი */
+  .pentagon {
+    width: 0;
+    border-style: solid;
+    border-width: 0 50px 50px 50px;
+    border-color: transparent transparent lightgreen transparent;
+    position: relative;
+  }
+  .pentagon:after {
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: -50px;
+    width: 0;
+    border-style: solid;
+    border-width: 50px 100px 0 100px;
+    border-color: lightgreen transparent transparent transparent;
+  }
+  
+  /* ატმის ფერის ოვალი */
+  .oval {
+    width: 150px;
+    height: 75px;
+    background-color: peachpuff;
+    border-radius: 50%;
+  }
+  
+  /* რუხი ვარსკვლავი */
+  .star {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid gray;
+    position: relative;
+  }
+  .star:after {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: -50px;
+    width: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid gray;
+  }
+  
+  /* ატმის ფერის ნახევარმთვარე */
+  .crescent {
+    width: 100px;
+    height: 100px;
+    background-color: peachpuff;
+    border-radius: 50%;
+    position: relative;
+  }
+  .crescent:before {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 25px;
+  }
+  
+  /* ნარინჯისფერი გული */
+  .heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+  }
+  .heart:before,
+  .heart:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 150px;
+    border-radius: 50px 50px 0 0;
+    background: orange;
+  }
+  .heart:before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+  .heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+  
