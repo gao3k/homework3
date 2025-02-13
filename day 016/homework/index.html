@@ -1,0 +1,79 @@
+def sum_of_list(numbers):
+    total = 0
+    for i in numbers:
+        total = total + i
+    return total
+print(sum_of_list([1,2,3,4,5,6]))
+
+
+def num_list(num):
+    number = 0
+    for i in num:
+        number = number + i
+        return number
+num_list([1,2,3,4])
+
+def sum(num_list):
+    sum = 0
+    for nums in num_list:
+        sum += nums
+    return sum
+
+print(sum([1,2,3,4,5]))
+
+def func(number_list):
+    sum = 0
+    quantity = 0
+    
+    for num in number_list:
+        if num >= 0:
+            sum = sum + num
+        else:
+            quantity = quantity + 1
+    
+    print(sum,quantity)
+
+func([1,2,3,-1,-2,-3])
+
+def remove_spaces(word):
+    word_without_space = ''
+    
+    for i in word:
+        if i != " ":
+            word_without_space = word_without_space + i
+    
+    print(word_without_space)
+
+remove_spaces("saba shubashishvili")
+
+def sum_even_indexes(numbers):
+    return sum(numbers[::2])
+numbers = [1, 2, 3, 4, 5]
+print(sum_even_indexes(numbers))
+
+
+nums = [1, 2, 3, 4, 5]
+odd_nums = []
+even_nums = []
+
+for num in nums:
+    if num % 2 == 0:
+        even_nums.append(num)
+    else:
+        odd_nums.append(num)
+
+print(sum(even_nums), sum(odd_nums))
+
+
+
+nums = [1,2,3,4,5]
+print(len(nums))
+
+
+string = "Goal 0riented Academy"
+output_string = string.replace(' ','')
+print(output_string)
+
+my_friends = ['dachi', 'nika', 'nika', 'sandro']
+i = ','.join(my_friends)
+print(i)

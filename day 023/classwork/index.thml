@@ -1,0 +1,33 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+</head>
+<body>
+
+<!-- Introduction -->
+<h1>Website About Me</h1>
+<p>Hi there! I'm from Tbilisi, 15 years old, and passionate about GOA.</p>
+ 
+ <img source = "goa"
+<img width="700" src="goa" alt="Me">
+
+<!-- My Hobby -->
+<h2>My Hobby: GOA</h2>
+<p>GOA is where every Georgian student can thrive.</p>
+<img width="700" src="1.jpg" alt="GOA Image">
+
+<!-- Creator -->
+<h2>Meet the Creator</h2>
+<img src="maxresdefault.jpg" alt="Creator">
+
+<!-- Contact Button -->
+<a target="_blank" href="https://www.facebook.com/saba shubashishvili/"><button>Contact Me on Facebook</button></a>
+
+<!-- Thank You Message -->
+<h2>Thanks for Visiting!</h2>
+
+</body>
+</html>
