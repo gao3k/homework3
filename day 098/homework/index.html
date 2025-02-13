@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>სახელის გამოცნობის თამაში</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Name Modal -->
+    <div id="nameModal" class="name-modal">
+        <div class="name-form">
+            <h2>გთხოვთ შეიყვანოთ თქვენი სახელი</h2>
+            <input type="text" id="nameInput" placeholder="სახელი">
+            <button onclick="saveName()">დაწყება</button>
+        </div>
+    </div>
+
+    <!-- Game Container -->
+    <div id="gameContainer" class="game-container hidden">
+        <h1>რიცხვის გამოცნობის თამაში</h1>
+        <div class="player-name">მოთამაშე: <span id="playerNameDisplay"></span></div>
+        <div class="score-display">ქულა: <span id="scoreDisplay">0</span></div>
+        <div class="color-picker">
+            <label for="colorPicker">აირჩიეთ ფონის ფერი:</label><br>
+            <input type="color" id="colorPicker" onchange="setBackgroundColor()">
+        </div>
+        <div class="difficulty">დიაპაზონი: <span id="rangeDisplay">1-2</span></div>
+        <input type="number" id="guessInput" class="number-input" placeholder="შეიყვანეთ რიცხვი">
+        <button onclick="checkGuess()">შემოწმება</button>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        .color-picker-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .color-input {
+            margin-bottom: 1rem;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="color-picker-container">
+        <h1>აირჩიეთ ფერი</h1>
+        <input type="color" id="colorPicker" class="color-input">
+        <br>
+        <button onclick="setBackgroundColor()">ფერის არჩევა</button>
+    </div>
+
+    <script>
+        // Check if there's a saved color when the page loads
+        window.onload = function() {
+            const savedColor = localStorage.getItem('backgroundColor');
+            if (savedColor) {
+                document.body.style.backgroundColor = savedColor;
+                document.getElementById('colorPicker').value = savedColor;
+            }
+        };
+
+        // Function to set and save the background color
+        function setBackgroundColor() {
+            const colorPicker = document.getElementById('colorPicker');
+            const selectedColor = colorPicker.value;
+            
+            // Set the background color
+            document.body.style.backgroundColor = selectedColor;
+            
+            // Save the color to localStorage
+            localStorage.setItem('backgroundColor', selectedColor);
+        }
+    </script>
+</body>
+</html>

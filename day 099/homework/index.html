@@ -1,0 +1,161 @@
+---
+theme: seriph
+background: https://source.unsplash.com/collection/94734566/1920x1080
+class: 'text-center'
+highlighter: shiki
+lineNumbers: true
+info: |
+  ## ვებ განვითარების კონცეფციები
+  API-ების, კომუნიკაციის და Promise-ების გაგება
+css: unocss
+---
+
+# ვებ განვითარების კონცეფციები
+API-ების, კომუნიკაციის და Promise-ების გაგება
+
+---
+layout: two-cols
+---
+
+# Fetch API-ის მაგალითი
+
+```js {all|2-3|4-5|6-8} {maxHeight: '400px'}
+async function fetchProduct() {
+  const response = await fetch(
+    'https://fakestoreapi.com/products/1'
+  );
+  const product = await response.json();
+  console.log(product);
+  displayProduct(product);
+}
+
+function displayProduct(product) {
+  const container = document.createElement('div');
+  container.innerHTML = `
+    <div class="product-card">
+      <img src="${product.image}" alt="${product.title}">
+      <h2>${product.title}</h2>
+      <p>${product.description}</p>
+      <strong>$${product.price}</strong>
+    </div>
+  `;
+  document.body.appendChild(container);
+}
+
+fetchProduct();
+```
+
+::right::
+
+<div v-click>
+<div class="ml-4">
+  <h3>კონსოლის გამოტანა:</h3>
+  <pre class="text-sm">
+{
+  "id": 1,
+  "title": "...",
+  "price": 109.95,
+  "description": "...",
+  "category": "...",
+  "image": "..."
+}
+  </pre>
+</div>
+</div>
+
+---
+layout: center
+---
+
+# პროგრამებს შორის კომუნიკაცია
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+
+```mermaid {scale: 0.7}
+sequenceDiagram
+    Program A->>Program B: მოთხოვნის/მონაცემების გაგზავნა
+    Note over Program A,Program B: API-ების, სოკეტების და ა.შ. მეშვეობით
+    Program B-->>Program A: პასუხის გაგზავნა
+```
+
+</div>
+<div>
+
+- პროგრამები კომუნიკაციას ახორციელებენ:
+  - API-ების მეშვეობით (REST, GraphQL)
+  - ვებსოკეტების მეშვეობით
+  - შეტყობინებების რიგების მეშვეობით
+  - გაზიარებული მეხსიერების მეშვეობით
+  - ფაილური სისტემის მეშვეობით
+  - მონაცემთა ბაზის მეშვეობით
+
+</div>
+</div>
+
+---
+layout: center
+---
+
+# Promise-ების გაგება
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+
+```mermaid {scale: 0.7}
+stateDiagram-v2
+    [*] --> მოლოდინში
+    მოლოდინში --> შესრულებული: resolve()
+    მოლოდინში --> უარყოფილი: reject()
+```
+
+</div>
+<div>
+
+## Promise-ის მდგომარეობები
+- **მოლოდინში**: საწყისი მდგომარეობა
+- **შესრულებული**: ოპერაცია დასრულებულია
+- **უარყოფილი**: ოპერაცია ჩაიშალა
+
+## მეთოდები
+- `.then()`: წარმატების დამუშავება
+- `.catch()`: შეცდომების დამუშავება
+- `.finally()`: ყოველთვის სრულდება
+
+</div>
+</div>
+
+---
+layout: two-cols
+---
+
+# Promise-ის მაგალითი
+
+```js {all|2-4|6-8|10-12} {maxHeight: '400px'}
+const myPromise = new Promise((resolve, reject) => {
+  // ასინქრონული ოპერაცია
+  setTimeout(() => resolve("წარმატება!"), 1000);
+});
+
+myPromise
+  .then(result => console.log(result))
+  .catch(error => console.error(error));
+
+// Async/Await სინტაქსი
+async function getData() {
+  const result = await myPromise;
+  console.log(result);
+}
+```
+
+::right::
+
+<div class="ml-4">
+<h3>მთავარი პუნქტები:</h3>
+
+- Promise-ები მართავენ ასინქრონულ ოპერაციებს
+- სამი მდგომარეობა: მოლოდინში, შესრულებული, უარყოფილი
+- შეიძლება დაჯაჭვა .then()-ით
+- შეცდომები მუშავდება .catch()-ით
+- ხელმისაწვდომია თანამედროვე async/await სინტაქსი
+</div>

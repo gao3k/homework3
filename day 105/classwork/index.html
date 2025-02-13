@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Letter Counter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M4 9h16"></path><path d="M4 15h16"></path><path d="M10 3 8 21"></path><path d="m16 3-2 18"></path></svg>
+        <h1>First Letter Counter</h1>
+      </div>
+      
+      <div class="input-group">
+        <label for="text-input">Enter Text</label>
+        <input
+          id="text-input"
+          type="text"
+          placeholder="Type something..."
+        >
+      </div>
+
+      <div class="result">
+        <p>
+          First letter <span id="first-letter">-</span> appears
+          <span id="count">0</span>
+          <span id="times">times</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

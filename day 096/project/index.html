@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cookie Clicker</h1>
+        <div class="cookie-count">🍪 <span id="cookies">0</span> cookies</div>
+        
+        <button id="cookie-btn" class="cookie-button">🍪</button>
+
+        <div class="stats">
+            <h2>Stats</h2>
+            <p>Cookies per click: <span id="multiplier">1</span></p>
+            <p>Auto-clickers: <span id="autoClickers">0</span></p>
+        </div>
+
+        <div class="store">
+            <h2>Store</h2>
+            <button id="buyMultiplier" class="store-button">
+                🍪 Buy Multiplier
+                <span id="multiplierCost">10</span> cookies
+            </button>
+            <button id="buyAutoClicker" class="store-button">
+                🏪 Buy Auto Clicker
+                <span id="autoClickerCost">15</span> cookies
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

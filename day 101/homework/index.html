@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Display with Error Handling</title>
+    <style>
+      .product-card {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        background: white;
+      }
+      
+      .product-image {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+      
+      .error-container {
+        text-align: center;
+        padding: 20px;
+      }
+      
+      .error-image {
+        max-width: 300px;
+        margin: 20px auto;
+      }
+      
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="productContainer" class="product-card hidden">
+      <img id="productImage" class="product-image" alt="Product Image">
+      <h2 id="productTitle"></h2>
+      <p id="productDescription"></p>
+      <p id="productPrice"></p>
+    </div>
+
+    <div id="errorContainer" class="error-container hidden">
+      <img src="https://http.cat/404" alt="404 Error" class="error-image">
+      <h2>Page Not Found</h2>
+      <p>The product you're looking for doesn't exist.</p>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
