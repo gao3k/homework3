@@ -1,0 +1,27 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #80ff00;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+  
+  body::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: #900; 
+    box-shadow:
+      50px 0   0 #900, 
+       0   50px 0 #900,
+      50px 50px 0 #900;
+  }
+  
+  /*css battle
