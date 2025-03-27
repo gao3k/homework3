@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Mini Projects</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { margin-bottom: 20px; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    
+    <!-- To-Do List with Deletion -->
+    <div class="container">
+        <h2>To-Do List</h2>
+        <input type="text" id="taskInput" placeholder="Enter a task">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="taskList"></ul>
+    </div>
+
+    <!-- Multiplication Table Generator -->
+    <div class="container">
+        <h2>Multiplication Table Generator</h2>
+        <input type="number" id="multiplier" placeholder="Enter a number">
+        <button onclick="generateTable()">Generate Table</button>
+        <div id="tableResult"></div>
+    </div>
+    
+    <!-- Number Guessing Game -->
+    <div class="container">
+        <h2>Number Guessing Game</h2>
+        <input type="number" id="guessInput" placeholder="Enter your guess">
+        <button onclick="checkGuess()">Guess</button>
+        <p id="guessResult"></p>
+    </div>
+
+    <script>
+        // To-Do List with Deletion
+        function addTask() {
+            let taskInput = document.getElementById('taskInput');
+            let taskText = taskInput.value.trim();
+            if (!taskText) return;
+            let taskList = document.getElementById('taskList');
+            let li = document.createElement('li');
+            li.innerHTML = `${taskText} <button onclick="this.parentElement.remove()">Delete</button>`;
+            taskList.appendChild(li);
+            taskInput.value = '';
+        }
+        
+        // Multiplication Table Generator
+        function generateTable() {
+            let num = document.getElementById('multiplier').value;
+            let resultDiv = document.getElementById('tableResult');
+            resultDiv.innerHTML = '';
+            if (!num) return;
+            for (let i = 1; i <= 10; i++) {
+                resultDiv.innerHTML += `${num} x ${i} = ${num * i}<br>`;
+            }
+        }
+        
+        // Number Guessing Game
+        let randomNumber = Math.floor(Math.random() * 20) + 1;
+        async function checkGuess() {
+            let guess = document.getElementById('guessInput').value;
+            let result = document.getElementById('guessResult');
+            await new Promise(resolve => setTimeout(resolve, 500));
+            if (guess == randomNumber) {
+                result.innerText = 'Correct! You guessed the number!';
+            } else if (guess > randomNumber) {
+                result.innerText = 'Too high! Try again.';
+            } else {
+                result.innerText = 'Too low! Try again.';
+            }
+        }
+    </script>
+</body>
+</html>
