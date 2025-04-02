@@ -1,0 +1,163 @@
+/*1)*/
+div {
+    background-color: lightblue;
+}
+
+p {
+    color: red;
+}
+
+ul {
+    border: 2px solid black;
+}
+
+
+/*2)*/
+div { 
+    background-color: lightblue; 
+}
+
+p { 
+    color: red; 
+}
+
+ul { 
+    border: 2px solid black; 
+}
+
+
+/* 3)  */
+#cool { 
+    color: blue; 
+}
+
+ul#long { 
+    font-weight: bold; 
+}
+
+/* 4)  */
+div p { 
+    font-size: 16px; 
+}
+
+/* 5)  */
+#cool span { 
+    text-decoration: underline; 
+}
+
+/* 6)  */
+.neato { 
+    background-color: yellow; 
+}
+
+/* 7) */
+ul.important { 
+    border: 2px solid red; 
+}
+
+#big.wide { 
+    padding: 10px; 
+}
+
+/* 8)  */
+p strong { 
+    font-style: italic; 
+}
+
+#fancy span { 
+    color: purple; 
+}
+
+
+/* 9)  */
+p, .fun { 
+    color: green; 
+}
+
+a, p, div { 
+    font-weight: bold; 
+}
+
+/* 10)  */
+* { 
+    margin: 0; 
+    padding: 0; 
+}
+
+/* 11)  */
+p * { 
+    color: red; 
+}
+
+ul.fancy * { 
+    font-style: italic; 
+}
+
+/* 12) */
+p + .intro { 
+    font-size: 20px; 
+}
+
+div + a { 
+    text-decoration: underline; 
+}
+
+/* 13)  */
+h1 ~ p { 
+    color: blue; 
+}
+
+/* 14)  */
+div > p { 
+    font-weight: bold; 
+}
+
+/* 15)  */
+p:first-child { 
+    text-transform: uppercase; 
+}
+
+div p:first-child { 
+    background-color: yellow; 
+}
+
+/* 16) */
+span:only-child { 
+    color: orange; 
+}
+
+ul li:only-child { 
+    font-style: italic; 
+}
+
+/* 17) */
+:last-child { 
+    border-bottom: 2px solid black; 
+}
+
+span:last-child { 
+    text-decoration: line-through; 
+}
+
+ul li:last-child { 
+    font-weight: bold; 
+}
+
+/* 18) */
+:nth-child(8) { 
+    color: purple; 
+}
+
+div p:nth-child(2) { 
+    background-color: lightblue; 
+}
+
+/* 19) */
+:nth-last-child(2) { 
+    font-size: 18px; 
+}
+
+/* 20) */
+span:first-of-type { 
+    text-decoration: overline; 
+}

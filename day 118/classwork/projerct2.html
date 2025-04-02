@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Card</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4cb42;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .card {
+            background-color: white;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        .card-content {
+            padding: 15px;
+        }
+        .card-content h3 {
+            margin: 10px 0;
+        }
+        .card-content p {
+            color: #666;
+            font-size: 14px;
+        }
+        .card-footer {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-top: 1px solid #eee;
+        }
+        .card-footer img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="card.png" alt="Card Image">
+        <div class="card-content">
+            <span style="background: #f0c040; padding: 3px 6px; border-radius: 5px; font-size: 12px;">Learning</span>
+            <p style="font-size: 12px; color: #888;">Published Wednesday April 2 2025</p>
+            <h3>HTML & CSS Foundations</h3>
+            <p>These languages are the backbone of every website, defining structure, content, and presentation.</p>
+        </div>
+        <div class="card-footer">
+            <img src="image.png" alt="Saba shubashishvili">
+            <p>Saba shubashishvili</p>
+        </div>
+    </div>
+</body>
+</html>

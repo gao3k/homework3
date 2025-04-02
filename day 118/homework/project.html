@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f0e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .radio-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .checkbox-group input {
+            width: auto;
+            margin-right: 10px;
+        }
+        button {
+            width: 100%;
+            background: #0b6440;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #084d33;
+        }
+    </style>
+</head>
+<body>
+    <form class="form-container">
+        <h2>Contact Us</h2>
+        <label for="first-name">First Name *</label>
+        <input type="text" id="first-name" name="first-name" required>
+        
+        <label for="last-name">Last Name *</label>
+        <input type="text" id="last-name" name="last-name" required>
+        
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label>Query Type *</label>
+        <div class="radio-group">
+            <label><input type="radio" name="query" value="general" required> General Enquiry</label>
+            <label><input type="radio" name="query" value="support" required> Support Request</label>
+        </div>
+        
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        
+        <div class="checkbox-group">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">I consent to being contacted by the team *</label>
+        </div>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

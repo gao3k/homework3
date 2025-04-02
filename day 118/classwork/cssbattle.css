@@ -1,0 +1,38 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #00B0C8;
+    margin: 0;
+}
+
+.box {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background-color: #1A353C;
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    width: 220px;
+    height: 20px;
+    background-color: #FFFFFF;
+    transform: translateY(-50%);
+}
+
+.box::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    background-color: #FFFFFF;
+    transform: translate(-50%, -50%);
+}
