@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>რეგისტრაცია</title>
+</head>
+<body>
+  <h2>დარეგისტრირდი</h2>
+  <input id="username" placeholder="სახელი">
+  <input id="password" type="password" placeholder="პაროლი">
+  <button onclick="register()">რეგისტრაცია</button>
+
+  <script>
+    function register() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username && password) {
+        localStorage.setItem('user', JSON.stringify({ username, password }));
+        window.location.href = 'shop.html';
+      } else {
+        alert("შეავსე ყველა ველი!");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<div class="circle"></div>
+<style>
+  body {
+    margin: 0;
+    background: #62306d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #f7ec7d;
+    box-shadow: 0 75px 0 0 #f7ec7d, 0 -75px 0 0 #f7ec7d;
+  }
+</style>

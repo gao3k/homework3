@@ -1,0 +1,33 @@
+<div class="box"></div>
+<style>
+  body {
+    margin: 0;
+    background: #f3ac3c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .box {
+    width: 200px;
+    height: 200px;
+    background: #f3ac3c;
+    position: relative;
+  }
+  .box::before, .box::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background: #1a4341;
+    border-radius: 50%;
+    position: absolute;
+  }
+  .box::before {
+    left: 0;
+    top: 0;
+  }
+  .box::after {
+    right: 0;
+    bottom: 0;
+  }
+</style>

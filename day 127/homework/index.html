@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>ცხოველების გენერატორი</title>
+</head>
+<body>
+  <h2>აირჩიე ცხოველები:</h2>
+  <label><input type="checkbox" id="cat"> კატა</label><br>
+  <label><input type="checkbox" id="dog"> ძაღლი</label><br>
+  <label><input type="checkbox" id="fox"> მელა</label><br>
+  <button onclick="generate()">გამოიტანე ფოტო</button>
+  <div id="photos"></div>
+
+  <script>
+    async function generate() {
+      const container = document.getElementById('photos');
+      container.innerHTML = '';
+
+      if (document.getElementById('cat').checked) {
+        const res = await fetch('https://api.thecatapi.com/v1/images/search');
+        const data = await res.json();
+        container.innerHTML += `<img src="${data[0].url}" width="200">`;
+      }
+
+      if (document.getElementById('dog').checked) {
+        const res = await fetch('https://dog.ceo/api/breeds/image/random');
+        const data = await res.json();
+        container.innerHTML += `<img src="${data.message}" width="200">`;
+      }
+
+      if (document.getElementById('fox').checked) {
+        const res = await fetch('https://randomfox.ca/floof/');
+        const data = await res.json();
+        container.innerHTML += `<img src="${data.image}" width="200">`;
+      }
+    }
+  </script>
+</body>
+</html>

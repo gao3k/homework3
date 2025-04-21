@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Joke Generator</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+    #display-div {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+    }
+    .fade {
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      background: #2196f3;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>😂 Joke Generator</h1>
+  <button id="joke-button">Get a Joke</button>
+  <div id="display-div">Loading a joke...</div>
+
+  <script>
+    async function showJoke() {
+      const res = await fetch('https://v2.jokeapi.dev/joke/Any?safe-mode');
+      const data = await res.json();
+      const div = document.getElementById('display-div');
+
+      if (data.type === 'single') {
+        div.innerHTML = `ID: ${data.id}<br><strong>${data.joke}</strong>`;
+      } else {
+        div.innerHTML = `ID: ${data.id}<br><strong>Setup:</strong> ${data.setup}`;
+        setTimeout(() => {
+          const delivery = document.createElement('div');
+          delivery.classList.add('fade');
+          delivery.innerHTML = `<strong>Delivery:</strong> ${data.delivery}`;
+          div.appendChild(delivery);
+        }, 1000);
+      }
+    }
+
+    document.getElementById('joke-button').addEventListener('click', showJoke);
+    showJoke(); // Load one on page load
+  </script>
+</body>
+</html>

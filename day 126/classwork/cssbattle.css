@@ -1,0 +1,17 @@
+<div class="wrap"></div>
+<style>
+  body {
+    margin: 0;
+    background: #62306d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .wrap {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(#f7ec7d 0 50%, #aa445f 50% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+  }
+</style>

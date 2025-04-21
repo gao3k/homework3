@@ -1,0 +1,28 @@
+// 1
+const task1 = new Promise(resolve => setTimeout(() => resolve("Task 1 complete"), 2000));
+
+// 2
+const task2 = Promise.reject("Task 2 failed").catch(err => console.log(err));
+
+// 3
+Promise.resolve(5)
+  .then(num => num * 2)
+  .then(result => console.log(result));
+
+// 4
+function delayedFirst() {
+  return new Promise(resolve => setTimeout(() => resolve("First"), 2000));
+}
+delayedFirst()
+  .then(msg => {
+    console.log(msg);
+    return new Promise(res => setTimeout(() => res("Second"), 1000));
+  })
+  .then(console.log);
+
+// 5
+function rejectTask() {
+  return new Promise((_, reject) => setTimeout(() => reject("Task 3 failed"), 2000));
+}
+rejectTask().catch(console.error);
+  

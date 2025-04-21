@@ -1,0 +1,33 @@
+<div class="circle"></div>
+<style>
+  body {
+    margin: 0;
+    background: #f3ac3c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .circle {
+    width: 150px;
+    height: 150px;
+    background: #1a4341;
+    border-radius: 50%;
+    position: relative;
+  }
+  .circle::before,
+  .circle::after {
+    content: '';
+    width: 150px;
+    height: 150px;
+    background: #1a4341;
+    border-radius: 50%;
+    position: absolute;
+  }
+  .circle::before {
+    left: -75px;
+  }
+  .circle::after {
+    right: -75px;
+  }
+</style>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Dog Viewer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+    img {
+      max-width: 300px;
+      margin-top: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      background: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>🐶 Random Dog Viewer</h1>
+  <button id="dog-button">Get New Dog</button>
+  <div id="dog-display"></div>
+
+  <script>
+    async function showDogImage() {
+      const res = await fetch("https://dog.ceo/api/breeds/image/random");
+      const data = await res.json();
+      document.querySelector('#dog-display').innerHTML = `
+        <img src="${data.message}" alt="Random Dog" />
+      `;
+    }
+
+    document.getElementById('dog-button').addEventListener('click', showDogImage);
+    showDogImage(); // Show one on load
+  </script>
+</body>
+</html>

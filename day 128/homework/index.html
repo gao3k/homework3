@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>ცხოველების გენერატორი</title>
+  <style>
+    #photos img {
+      margin: 10px;
+      width: 200px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>აირჩიე ცხოველები:</h2>
+  <label><input type="checkbox" id="cat"> კატა</label><br>
+  <label><input type="checkbox" id="dog"> ძაღლი</label><br>
+  <label><input type="checkbox" id="fox"> მელა</label><br><br>
+
+  <button onclick="generate()">Generate</button>
+  <div id="photos"></div>
+
+  <script>
+    async function generate() {
+      const container = document.getElementById('photos');
+      container.innerHTML = ''; // Clear previous photos
+
+      if (document.getElementById('cat').checked) {
+        try {
+          const res = await fetch('https://api.thecatapi.com/v1/images/search');
+          const data = await res.json();
+          container.innerHTML += `<img src="${data[0].url}" alt="cat">`;
+        } catch (err) {
+          console.error('Cat Error:', err);
+        }
+      }
+
+      if (document.getElementById('dog').checked) {
+        try {
+          const res = await fetch('https://dog.ceo/api/breeds/image/random');
+          const data = await res.json();
+          container.innerHTML += `<img src="${data.message}" alt="dog">`;
+        } catch (err) {
+          console.error('Dog Error:', err);
+        }
+      }
+
+      if (document.getElementById('fox').checked) {
+        try {
+          const res = await fetch('https://randomfox.ca/floof/');
+          const data = await res.json();
+          container.innerHTML += `<img src="${data.image}" alt="fox">`;
+        } catch (err) {
+          console.error('Fox Error:', err);
+        }
+      }
+    }
+  </script>
+</body>
+</html>

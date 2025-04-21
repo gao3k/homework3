@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>ხუმრობისა და რჩევის გენერატორი</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>ხუმრობისა და რჩევის გენერატორი</h2>
+
+  <label for="category">აირჩიე ხუმრობის კატეგორია:</label>
+  <select id="category">
+    <option value="Any">Any</option>
+    <option value="Programming">Programming</option>
+    <option value="Misc">Misc</option>
+    <option value="Dark">Dark</option>
+    <option value="Pun">Pun</option>
+    <option value="Spooky">Spooky</option>
+    <option value="Christmas">Christmas</option>
+  </select>
+
+  <br>
+  <button onclick="getJokeAndAdvice()">მიჩვენე ხუმრობა და რჩევა</button>
+
+  <div id="output" class="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
